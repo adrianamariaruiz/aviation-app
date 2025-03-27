@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
-:root {
+@theme {
   --background: #ffffff;
   --foreground: #171717;
+  --color-gradientFont: 
 }
 
 @theme inline {
@@ -10,11 +11,16 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
 }
+ /* #0A162D */
+ /* #006AFF, #00F9FF */
+
+ 
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
+  @theme {
+    --background: #0A162D;
     --foreground: #ededed;
   }
 }
