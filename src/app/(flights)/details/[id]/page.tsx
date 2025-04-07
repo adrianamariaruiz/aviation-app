@@ -2,17 +2,20 @@
 
 interface Props {
   params: {
-    slug: string;
+    id: string;
   }
 }
 
-const pageDetails = ({params}:Props) => {
-  const{slug} = params;
 
-  // if(!slug) return notFound();
+const pageDetails = ({params}:Props) => {
+  const{id} = params;
+
+  // if(!id) return notFound();
 
   return (
-    <div>pageDetails {slug}</div>
+    <>
+      <div>pageDetails {id}</div>
+    </>
   )
 }
 
