@@ -1,4 +1,6 @@
-// import { notFound } from "next/navigation";
+import { notFound } from "next/navigation";
+
+import getAirportDetail from "@/app/actions/airport/get-airport-by-id";
 
 interface Props {
   params: {
@@ -6,15 +8,17 @@ interface Props {
   }
 }
 
-
-const pageDetails = ({params}:Props) => {
+const pageDetails = async({params}:Props) => {
   const{id} = params;
 
-  // if(!id) return notFound();
+  const airportInfo = await getAirportDetail(id)
+
+  if(!airportInfo) return notFound();
 
   return (
     <>
       <div>pageDetails {id}</div>
+      <div>{airportInfo.airport_name}</div>
     </>
   )
 }

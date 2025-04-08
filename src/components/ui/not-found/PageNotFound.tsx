@@ -6,7 +6,7 @@ const PageNotFound = () => {
     <div className="text-center px-5">
       <h2 className="antialiased text-5xl pb-2">404 Not Found</h2>
       <Link href="/" className="hover:underline transition-all">
-        Regresar a la tienda
+        Regresar a la página principal
       </Link>
     </div>
   </div>
