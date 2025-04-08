@@ -1,11 +1,21 @@
 import AirportsList from "@/components/airportsList/AirportList";
 import Title from "@/components/ui/title/Title"
 import { countries } from "@/components/util/data-mock";
-import getData from "../actions/airport/get-airports";
+import { getPagination } from "../actions/airport/airport-pagination";
 
-const AirportsHome = async() => {
+interface Props {
+  searchParams: {
+    page?: string
+  }
+}
 
-  const airports = await getData();
+export default async function Page({ searchParams }: Props) {
+  const {page} = await searchParams;
+  const pageAsNumber = page ? parseInt(page) : 1
+
+  const airports = await getPagination({page: pageAsNumber, offset: (pageAsNumber - 1) * 10});
+
+  if(!airports) return null;
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -20,5 +30,3 @@ const AirportsHome = async() => {
     </div>
   );
 }
-
-export default AirportsHome;
