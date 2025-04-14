@@ -9,7 +9,7 @@ interface Props {
 
 const AirportsList = ({ airports, countries }: Props) => {
   return (
-    <div className="flex justify-center w-full gap-4">
+    <div className="flex justify-center w-full gap-4 mb-10">
       <div className="relative overflow-x-auto w-fu ll shadow-md sm:rounded-lg xl:w-3/5">
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="text-md text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -25,7 +25,7 @@ const AirportsList = ({ airports, countries }: Props) => {
               airports.map((airport) => {
 
                 const airportCountry = countries.find(country => country.country_iso2 === airport.country_iso2);
-                const airpotTimezone = airport.timezone.split("/")[1].replace(/_/g, " ");
+                const airpotTimezone = airport?.timezone?.split("/")[1].replace(/_/g, " ");
                 
                 return (
                   <tr key={airport.airport_id} className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 border-gray-200">

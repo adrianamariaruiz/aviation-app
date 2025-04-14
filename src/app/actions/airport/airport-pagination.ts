@@ -21,7 +21,14 @@ export const getPagination = async( {page=1, offset=0, limit=10}: PaginationProp
     const res = await fetch(`${url}?access_key=${key}&page=${page}&offset=${offset}&limit=${limit}`, {next: {revalidate: 60}});
     const dataResponse = await res.json();
 
-    return dataResponse.data;
+    const totalairports = dataResponse.pagination.total;
+    const totalPages = Math.ceil(totalairports / limit);
+
+    return {
+      currentPage: page,
+      totalPages: totalPages,
+      airports: dataResponse.data,
+    }
 
   } catch (error) {
     console.error('Error fetching airport data:', error);
