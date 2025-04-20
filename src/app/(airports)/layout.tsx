@@ -1,5 +1,5 @@
 
-export default function FlightLayout({
+export default function AirportLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
