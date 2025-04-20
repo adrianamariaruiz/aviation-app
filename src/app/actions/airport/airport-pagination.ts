@@ -25,7 +25,6 @@ export const getPagination = async( {page=1, offset=0, limit=10}: PaginationProp
     const totalPages = Math.ceil(totalairports / limit);
 
     return {
-      currentPage: page,
       totalPages: totalPages,
       airports: dataResponse.data,
     }

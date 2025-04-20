@@ -12,7 +12,6 @@ const getAirportDetail = async (id: string) => {
     const dataResponse = await res.json();
     
     const airportInfo = dataResponse.data.find((airport:IAirport) => airport.id === id);
-    console.log(airportInfo)
 
     if (!airportInfo) return null;
   

@@ -14,7 +14,7 @@ export default async function Page({ searchParams }: Props) {
   const {page} = await searchParams;
   const pageAsNumber = page ? parseInt(page) : 1
 
-  const {currentPage, totalPages, airports} = await getPagination({page: pageAsNumber, offset: (pageAsNumber - 1) * 20, limit: 20});
+  const {totalPages, airports} = await getPagination({page: pageAsNumber, offset: (pageAsNumber - 1) * 20, limit: 20});
 
   return (
     <div className="flex flex-col min-h-screen py-5">

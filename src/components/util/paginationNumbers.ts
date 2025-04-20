@@ -5,7 +5,7 @@ export const paginationNumbers = (currentPage: number, totalPages: number ) => {
     return Array.from({length: totalPages}, (_, i) => i + 1);
   };
 
-  if(currentPage <= 4) {
+  if(currentPage <= 3) {
     return [1, 2, 3, 4, '...', totalPages -1, totalPages];
   }
 
@@ -17,9 +17,11 @@ export const paginationNumbers = (currentPage: number, totalPages: number ) => {
     1, 
     2, 
     '...', 
+    currentPage - 2,
     currentPage - 1, 
     currentPage, 
     currentPage + 1, 
+    currentPage + 2,
     '...', 
     totalPages - 1, 
     totalPages

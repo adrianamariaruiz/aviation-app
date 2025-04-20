@@ -14,8 +14,8 @@ const Pagination = ({ totalPages }: Props) => {
   const pathName = usePathname();
   const searchParams = useSearchParams();
 
-  const pageString = Number(searchParams.get('page')) ?? 1;
-  const currentPage = isNaN(pageString) ? 1 : pageString;
+  const pageString = searchParams.get('page') ?? 1;
+  const currentPage = isNaN(+pageString) ? 1 : +pageString;
 
   const allPagination = paginationNumbers(currentPage, totalPages);
 
