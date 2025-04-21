@@ -20,7 +20,7 @@ export default async function Page({ searchParams }: Props) {
     <div className="flex flex-col min-h-screen py-5">
         <Title 
           title="SkyConnect Explorer"
-          className="mb-10"
+          className="mb-10 m-auto"
         />
         <AirportsList 
           airports={airports} 

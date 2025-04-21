@@ -1,22 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --background: #ffffff;
-  --foreground: #171717;
-  --color-gradientFont: 
-}
+  --color-primary-200: #f4f4fa;
+  --color-primary-400: #b3bae4;
+  --color-primary-700: #444a7a;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  
-}
- /* #0A162D */
- /* #006AFF, #00F9FF */
+  --color-secondary-400: #006AFF;
+  --color-secondary-200: #00F9FF;
 
- 
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+
+  --font-geist-sans: 'Geist', sans-serif;
+  --font-geist-mono: 'Geist Mono', monospace;
+}
 
 @media (prefers-color-scheme: dark) {
   @theme {
@@ -28,5 +25,9 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+.text-transition {
+  @apply bg-linear-90 from-[#006AFF] to-[#00F9FF] text-transparent bg-clip-text
 }
