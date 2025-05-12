@@ -4,6 +4,7 @@
   --color-primary-200: #f4f4fa;
   --color-primary-400: #b3bae4;
   --color-primary-700: #444a7a;
+  --color-primary-800: #2b2e4a;
 
   --color-secondary-400: #006AFF;
   --color-secondary-200: #00F9FF;
@@ -30,4 +31,8 @@ body {
 
 .text-transition {
   @apply bg-linear-90 from-[#006AFF] to-[#00F9FF] text-transparent bg-clip-text
+}
+
+.bg-gradient {
+  @apply bg-linear-90 from-primary-700 to-primary-800 text-transparent
 }

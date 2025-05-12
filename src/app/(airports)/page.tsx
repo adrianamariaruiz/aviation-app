@@ -12,6 +12,7 @@ interface Props {
 
 export default async function Page({ searchParams }: Props) {
   const {page} = await searchParams;
+  // console.log(searchParams)
   const pageAsNumber = page ? parseInt(page) : 1
 
   const {totalPages, airports} = await getPagination({page: pageAsNumber, offset: (pageAsNumber - 1) * 20, limit: 20});
